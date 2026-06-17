@@ -1,0 +1,49 @@
+---
+import { personalInfo } from "../../lib/config";
+
+const { name, university, graduation, direction, bio } = personalInfo;
+---
+
+<section id="about" class="section-container">
+  <h2 class="section-title">
+    <span class="inline-block">&middot; About Me &middot;</span>
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <!-- Card 1: Education -->
+    <div class="card p-6 text-center">
+      <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🎓</div>
+      <h3 class="font-semibold text-lg mb-2" style="color: var(--accent);">Education</h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+        {university}<br />
+        <span style="font-size: 0.85rem;">{graduation}</span>
+      </p>
+    </div>
+
+    <!-- Card 2: Direction -->
+    <div class="card p-6 text-center">
+      <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">⚡</div>
+      <h3 class="font-semibold text-lg mb-2" style="color: var(--accent);">Approach</h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">
+        {direction}
+      </p>
+    </div>
+
+    <!-- Card 3: Passion -->
+    <div class="card p-6 text-center">
+      <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">🤖</div>
+      <h3 class="font-semibold text-lg mb-2" style="color: var(--accent);">Passion</h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">
+        AI Lover<br />
+        <span style="font-size: 0.85rem;">\u5173\u6CE8 AI \u524D\u6CBF\u52A8\u6001</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Bio -->
+  <div class="card p-8 max-w-2xl mx-auto text-center">
+    <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8;">
+      {bio}
+    </p>
+  </div>
+</section>

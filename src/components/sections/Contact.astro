@@ -1,0 +1,65 @@
+---
+import { personalInfo } from "../../lib/config";
+
+const { contact } = personalInfo;
+---
+
+<section id="contact" class="section-container">
+  <h2 class="section-title">
+    <span class="inline-block">&middot; Contact &middot;</span>
+  </h2>
+
+  <div class="max-w-xl mx-auto">
+    <div class="flex flex-col gap-4 items-center">
+      <!-- WeChat -->
+      <a
+        href={`https://weixin.qq.com`}
+        class="contact-item card flex items-center gap-4 w-full max-w-sm p-4 no-underline"
+        style="color: var(--text-primary);"
+      >
+        <span style="font-size: 1.5rem;">\u5FAE\u4FE1</span>
+        <span style="color: var(--text-secondary); flex: 1;">{contact.wechat}</span>
+      </a>
+
+      <!-- Email -->
+      <a
+        href={`mailto:${contact.email}`}
+        class="contact-item card flex items-center gap-4 w-full max-w-sm p-4 no-underline"
+        style="color: var(--text-primary);"
+      >
+        <span style="font-size: 1.5rem;">\u90AE\u7BB1</span>
+        <span style="color: var(--text-secondary); flex: 1;">{contact.email}</span>
+      </a>
+
+      <!-- GitHub -->
+      <a
+        href={contact.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-item card flex items-center gap-4 w-full max-w-sm p-4 no-underline"
+        style="color: var(--text-primary);"
+      >
+        <span style="font-size: 1.5rem;">GitHub</span>
+        <span style="color: var(--text-secondary); flex: 1; font-size: 0.9rem;">
+          {contact.github.replace("https://", "")}
+        </span>
+      </a>
+
+      <!-- Resume Download -->
+      <a
+        href="/resume/resume.pdf"
+        download
+        class="contact-item card flex items-center gap-4 w-full max-w-sm p-4 no-underline"
+        style="color: var(--accent); font-weight: 600;"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+        <span style="flex: 1;">\u4E0B\u8F7D\u7B80\u5386</span>
+        <span style="font-size: 0.8rem; color: var(--text-secondary);">PDF</span>
+      </a>
+    </div>
+  </div>
+</section>
